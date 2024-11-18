@@ -72,54 +72,52 @@ function sumDate() {
 sumDate()
 
 
-function getKeys(firstLetters, secondLetters, firstNumbers, secondNumbers) {
-    let letters = "ABCDEFGHIJKLMNOPQRST"
-    let numbers = "0123456789"
-
-    let allPossibleCodes = []
-
-
-    for (let i = 0; i < numbers.length; i++){
-        let number = numbers.charAt(i)
-        for (let j = 0; j < letters.length; j++){
-            let letter = letters.charAt(j)
-            let finalCode = firstLetters + letter + secondLetters + "-" + firstNumbers + number + secondNumbers
-            allPossibleCodes.push(finalCode)
-        }
-    }
-
-    return allPossibleCodes
+function isThirty(d, z) {
+    return d === 30 || z === 30 || (d + z === 30);
 }
 
-const firstLetters = "AHF"
-const secondLetters = "INL"
-const firstNumber = "595"
-const secondNumbers = "962"
+console.log(isThirty(30, 5))
+console.log(isThirty(15, 10))
+//
 
-
-console.log(getKeys(firstLetters, secondLetters, firstNumber, secondNumbers))
-
-
-function getKeys2(letters, firstNumbers, secondNumbers) {
-    let numbers = "0123456789"
-
-    let allPossibleCodes = []
-
-
-    for (let i = 0; i < numbers.length; i++){
-        let number = numbers.charAt(i)
-        for (let j = 0; j < numbers.length; j++){
-            let numberTwo = numbers.charAt(j)
-            let finalCode = letters + "-" + firstNumbers + number + numberTwo + secondNumbers
-            allPossibleCodes.push(finalCode)
-        }
-    }
-
-    return allPossibleCodes
+const esTrenta = function(a, b) {
+    return a === 30 || b === 30 || (a + b === 30)
 }
 
-const letters = "FHWDRGD"
-const secondFirstNumbers = "866"
-const secondSecondNumbers = "89"
+console.log(esTrenta(10, 20))
 
-console.log(getKeys2(letters, secondFirstNumbers, secondSecondNumbers))
+//
+
+const mateixValorTipus = (a, b) => a === b
+
+console.log(mateixValorTipus(5, 5))
+console.log(mateixValorTipus(5, "5"))
+console.log(mateixValorTipus(true, false))
+console.log(mateixValorTipus("hola", "hola"))
+
+//
+
+const arrelQuadradaDosDecimals = (valor) => Math.sqrt(valor).toFixed(2)
+
+console.log(arrelQuadradaDosDecimals(9))
+console.log(arrelQuadradaDosDecimals(2))
+console.log(arrelQuadradaDosDecimals(25))
+
+//
+
+const convertirMinuscules = (text) => text.toLowerCase()
+
+console.log(convertirMinuscules("HELLO WORLD"))
+console.log(convertirMinuscules("JavaScript"))
+console.log(convertirMinuscules("AdÉu!"))
+
+//
+
+const retornaNoNull = (a, b) => a !== null ? a : b
+
+console.log(retornaNoNull(null, 5))
+console.log(retornaNoNull(10, null))
+console.log(retornaNoNull(null, null))
+console.log(retornaNoNull("Hola", 42))
+
+
